@@ -1,5 +1,19 @@
 /* eslint-disable */
 
+$(document).ready(function(){
+  $('html, body').scrollTop(0);  
+
+  $(window).on('load', function() {
+    setTimeout(function(){
+      $('html, body').scrollTop(0);
+    }, 0);
+  });
+
+  $('#jef-jeb-img').on('animationend', () => {
+    $('body').removeClass('no-scroll')
+  })
+});
+
 $(document).ready(function () {
   var itemsMainDiv = ('.MultiCarousel');
   var itemsDiv = ('.MultiCarousel-inner');
