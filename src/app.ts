@@ -5,6 +5,9 @@ import path from 'path'
 
 import routes from './routes'
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require('dotenv').config()
+
 class App {
   public express: express.Application
 

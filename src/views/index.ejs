@@ -4,99 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="/js/index.js"></script>
+
     <link href="/css/index.css" rel="stylesheet" type="text/css">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="/js/index.js"></script>
+
+    <link href="/css/flickity.css" rel="stylesheet" type="text/css">
+    <script src="/js/flickity.js"></script>
 
     <title>Jef e Jeb</title>
 </head>
 <body>
     <div id="banner-div">
         <img class="cssanimation sequence fadeInBottom banner-img" id="jef-jeb-img" src="/images/jef_jeb_e_eugenio_pngg.png">
-        <div id="jef-jeb-div">
-            <img class="banner-img" src="/images/jef_jeb_e_eugenio_background_png.png">
-        </div>
+        <img class="banner-img" src="/images/jef_jeb_e_eugenio_background_png.png">
         <h1 id="titulo-h1">Jef e Jeb</h1>
     </div>
     <div id="content-container">
-        <div id="autor-personagens-div">
-            <div id="button-container">
-                <div class="menu-button-container">
-                    <img class="menu-button-image" src="/images/gustavo.png">
-                    <button class="menu-button">O AUTOR</button>
-                </div>
-                <div class="menu-button-container">
-                    <img class="menu-button-image" src="/images/personagens.png">
-                    <button class="menu-button">PERSONAGENS</button>
-                </div>
-                <div class="menu-button-container">
-                    <img class="menu-button-image" src="/images/gallery.png">
-                    <button class="menu-button">GALERIA</button>
-                </div>
+        <section class="navigation-grid">
+            <div>
+                <img class="navigation-img" src="/images/gustavo.png">
+                <button class="navigation-button" href="#">AUTOR</button>
             </div>
-        </div>
-        <div id="capitulos-div">
-            <h1 id="capitulos-h1">Capítulos<a>Ver todos</a></h1>
-            <div id="capas-div">
-                <div class="container">
-                    <div class="row">
-                        <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
-                            <div class="MultiCarousel-inner">
-                                <div class="item">
-                                    <div class="pad15">
-                                        <img class="chapter-cover" src="/images/cap9.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="pad15">
-                                        <img class="chapter-cover" src="/images/cap9.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="pad15">
-                                        <img class="chapter-cover" src="/images/cap9.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="pad15">
-                                        <img class="chapter-cover" src="/images/cap9.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="pad15">
-                                        <img class="chapter-cover" src="/images/cap9.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="pad15">
-                                        <img class="chapter-cover" src="/images/cap9.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="pad15">
-                                        <img class="chapter-cover" src="/images/cap9.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="pad15">
-                                        <img class="chapter-cover" src="/images/cap9.jpg">
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary leftLst carousel-button"><</button>
-                            <button class="btn btn-primary rightLst carousel-button">></button>
-                        </div>
-                    </div>
-                </div>
+            <div>
+                <img class="navigation-img" src="/images/gustavo.png">
+                <button class="navigation-button" href="#">PERSONAGENS</button>
             </div>
+            <div>
+                <img class="navigation-img" src="/images/gustavo.png">
+                <button class="navigation-button" href="#">GALERIA</button>
+            </div>
+        </section>
+        <h1 class="topic-header">Capítulos</h1>
+        <div class="carousel-container js-flickity"  data-flickity-options='{ "cellAlign": "left", "contain": true, "wrapAround": true, "pageDots": false }'>
+            <% for (var i =1; i <=10;  i++ ) { %>
+                <div class="carousel-cell">
+                    <img class="chapter-cover" src="/images/cap9.jpg">
+                </div>
+            <% } %>
         </div>
-        <h1 id="capitulos-h1">Instagram</h1>
+        <h1 class="topic-header">Instagram</h1>
         <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-        <div class="elfsight-app-f18a2269-f488-4d7f-9107-e1ca46d99f8f"></div>
+        <div class="elfsight-app-f18a2269-f488-4d7f-9107-e1ca46d99f8f"></div> 
     </div>
 </body>
 </html>

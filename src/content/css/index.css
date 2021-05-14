@@ -1,3 +1,31 @@
+/* vietnamese */
+@font-face {
+  font-family: 'Alfa Slab One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/AlfaSlabOne-Regular.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alfa Slab One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/AlfaSlabOne-Regular.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alfa Slab One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/AlfaSlabOne-Regular.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 body {
   margin: 0;
 }
@@ -11,18 +39,6 @@ img {
   -webkit-box-shadow: 0px 0px 53px 3px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 53px 3px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 53px 3px rgba(0,0,0,0.75);
-}
-
-#content-container {
-  display: inline-block;
-  -webkit-box-shadow: 0px 0px 53px -22px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 53px -22px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 53px -22px rgba(0,0,0,0.75);
-  margin: 0;
-  position: absolute;
-  left: 50%;
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
 }
 
 #titulo-h1 {
@@ -76,22 +92,12 @@ img {
   margin-left: 50px;
 }
 
-.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
-    .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
-        .MultiCarousel .MultiCarousel-inner .item { float: left;}
-        .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; }
-    .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
-    .MultiCarousel .leftLst { left:0; }
-    .MultiCarousel .rightLst { right:0; }
-    
-        .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc !important; }
-
-a {
+.default-link {
   font-size: 20px;
   margin-left: 10px;
   font-family: arial,sans-serif;
-  color:#3366BB; 
-  text-decoration: underline;
+  color:#3366BB !important; 
+  text-decoration: underline !important;
   cursor: pointer;
 }
 
@@ -115,7 +121,7 @@ a {
 @keyframes fadeInBottom {
   from {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(-100%);
   }
   to { opacity: 1 }
 }
@@ -151,4 +157,78 @@ a {
   left: 50%;
   -ms-transform: translateX(50%);
   transform: translateX(50%);
+}
+
+.navigation-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.navigation-button {
+  background-color: #77F3FC;
+  border: 0 transparent;
+  font-family: 'Alfa Slab One', cursive;
+  color: black;
+  border-radius: 15px;
+  font-size: 24px;
+  padding: 5px 0 5px 0;
+  width: 100%;
+}
+
+.navigation-button:hover {
+  background-color: #5CBDC4;
+  cursor: pointer;
+}
+
+#content-container {
+  -webkit-box-shadow: 0px 0px 53px -22px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 53px -22px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 53px -22px rgba(0,0,0,0.75);
+  background-color: #ffffff;
+  z-index: -1;
+  width: 60%;
+  left: 50%;
+  position: absolute;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 7vh 50px 0 50px;
+}
+
+@media (max-width: 768px) {
+  #content-container {
+    width: 90%;
+    padding: 7vh 10px 0 10px;
+  }
+}
+
+.navigation-img {
+  width: 140px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1270px) {
+  .navigation-grid {
+    grid-template-columns: repeat(1, minmax(240px, 1fr));
+    margin: 0 20px 0 20px;
+  }
+}
+
+.carousel-cell {
+  width: 140px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.carousel-container {
+  margin: 30px 10px 30px 10px;
+}
+
+.topic-header {
+  font-family: 'Alfa Slab One', cursive;
+  color: black;
+  font-size: 35px;
 }
