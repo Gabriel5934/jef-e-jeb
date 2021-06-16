@@ -1,0 +1,1 @@
+const signinGoogleButton = document.querySelector('#signinGoogle')
