@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="content/css/index.css" rel="stylesheet" type="text/css">
+    <link href="content/css/fonts.css" rel="stylesheet" type="text/css">
+    <script src="content/js/index.js"></script>
+
+    <link href="content/css/flickity.css" rel="stylesheet" type="text/css">
+    <script src="content/js/flickity.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Jef e Jeb</title>
+</head>
+<body id="override">
+    <header>
+        <input data-bs-toggle="modal" data-bs-target="#signinModal" type="image" src="content/images/user.png"></input>
+    </header>
+    <div id="banner-div">
+        <img class="cssanimation sequence fadeInBottom banner-img" id="jef-jeb-img" src="content/images/jef_jeb_e_eugenio_pngg.png">
+        <img class="banner-img" src="content/images/jef_jeb_e_eugenio_background_png.png">
+        <h1 id="titulo-h1">Jef e Jeb</h1>
+    </div>
+    <div id="content-container">
+        <section class="navigation-grid">
+            <div>
+                <img class="navigation-img" src="content/images/gustavo.png">
+                <button class="navigation-button" href="#">AUTOR</button>
+            </div>
+            <div>
+                <img class="navigation-img" src="content/images/gustavo.png">
+                <button class="navigation-button" href="#">PERSONAGENS</button>
+            </div>
+            <div>
+                <img class="navigation-img" src="content/images/gustavo.png">
+                <button type="button" class="navigation-button" href="https://www.jw.org/en/">GALERIA</button>
+            </div>
+        </section>
+        <h1 class="topic-header">Capítulos</h1>
+        <div class="carousel-container js-flickity"  data-flickity-options='{ "cellAlign": "left", "contain": true, "wrapAround": false, "pageDots": false, "draggable": false }'>
+            <% for (let i =0; i < chaptersCount;  i++ ) { %>
+                <button type="button" class="chapter-button">
+                    <a href=<%-`./capitulo/${i+1}`%>><img class="chapter-cover" src=<%-`content/images/chapters-covers/Jef&Jeb${i+1}.jpg`%>></a>
+                </button>
+            <% } %>
+        </div>
+        <h1 class="topic-header">Instagram</h1>
+        <!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+        <div class="elfsight-app-f18a2269-f488-4d7f-9107-e1ca46d99f8f"></div>  -->
+    </div>
+    <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+    <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signinModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <input id="signinGoogle" type="image" src="content/images/google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png"></input><br>
+                <a>Não é cadastrado?</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
+                <button type="button" class="btn btn-primary">ENTRAR</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.6.7/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

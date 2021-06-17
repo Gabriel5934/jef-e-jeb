@@ -1,0 +1,225 @@
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+header { 
+  position: fixed;
+  z-index: 2;
+}
+
+header > input {
+  right: 0;
+  position: fixed;
+  width: 64px; height: 64px;
+  border-radius: 128px;
+  margin: 15px 15px 0 0;
+}
+
+#banner-div {
+  position: relative;
+  -webkit-box-shadow: 0px 0px 53px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 53px 3px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 53px 3px rgba(0,0,0,0.75);
+}
+
+#titulo-h1 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: 'Alfa Slab One', cursive;
+  color: white;
+  font-size: 7.5vw;
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.76);
+}
+
+.menu-button {
+  background-color: #77F3FC;
+  border: 0 transparent;
+  font-family: 'Alfa Slab One', cursive;
+  color: black;
+  width: 280px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: 24px;
+}
+
+.menu-button-container {
+  margin: 0 80px 0 80px;
+  position: relative;
+}
+
+.menu-button:hover{
+  background-color: #5CBDC4
+}
+
+#autor-personagens-div {
+  height: 400px;
+  position: relative;
+}
+
+#capitulos-div {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+#capitulos-h1 {
+  font-family: 'Alfa Slab One', cursive;
+  color: black;
+  font-size: 64px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.default-link {
+  font-size: 20px;
+  margin-left: 10px;
+  font-family: arial,sans-serif;
+  color:#3366BB !important; 
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+#jef-jeb-img {
+  position: absolute;
+  animation-delay: 0.5s;
+}
+
+.banner-img {
+  width : 100%; height : 100%;
+}
+
+.cssanimation, .cssanimation span {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.cssanimation span { display: inline-block }
+
+.fadeInBottom { animation-name: fadeInBottom }
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to { opacity: 1 }
+}
+
+#button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.pad15:hover {
+  padding: 0px !important;
+}
+
+.carousel-button { 
+  background-color: #77F3FC !important;
+  border-color: transparent !important;
+  color: black !important;
+}
+
+.menu-button-image {
+  height: 140px;
+  width: 140px;
+  left: 50%;
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.navigation-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.navigation-button {
+  background-color: #77F3FC;
+  border: 0 transparent;
+  font-family: 'Alfa Slab One', cursive;
+  color: black;
+  border-radius: 15px;
+  font-size: 24px;
+  padding: 5px 0 5px 0;
+  width: 100%;
+}
+
+.navigation-button:hover {
+  background-color: #5CBDC4;
+  cursor: pointer;
+}
+
+#content-container {
+  -webkit-box-shadow: 0px 0px 53px -22px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 53px -22px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 53px -22px rgba(0,0,0,0.75);
+  background-color: #ffffff;
+  z-index: -1;
+  width: 60%;
+  left: 50%;
+  position: absolute;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 7vh 50px 0 50px;
+}
+
+#override a { 
+  color: #0d6efd;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.navigation-img {
+  width: 140px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-container {
+  margin: 30px 10px 30px 10px;
+}
+
+.chapter-cover {
+  width: 140px;
+  height: auto;
+  border-radius: 15px;
+}
+
+.topic-header {
+  font-family: 'Alfa Slab One', cursive;
+  color: black;
+  font-size: 35px;
+}
+
+.chapter-button {
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+/* media queries */
+@media (max-width: 768px) {
+  #content-container {
+    width: 90%;
+    padding: 7vh 10px 0 10px;
+  }
+}
+
+@media (max-width: 1270px) {
+  .navigation-grid {
+    grid-template-columns: repeat(1, minmax(240px, 1fr));
+    margin: 0 20px 0 20px;
+  }
+}
