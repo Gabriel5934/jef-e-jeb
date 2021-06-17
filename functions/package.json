@@ -1,7 +1,7 @@
 {
   "name": "functions",
   "scripts": {
-    "build": "sucrase ./src -d ./lib --transforms typescript,imports",
+    "build": "tsc",
     "serve": "sucrase ./src -d ./lib --transforms typescript,imports && firebase emulators:start --only functions",
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
@@ -17,6 +17,7 @@
     "express": "^4.17.1",
     "firebase-admin": "^9.8.0",
     "firebase-functions": "^3.14.1",
+    "path": "^0.12.7",
     "sucrase": "^3.18.2"
   },
   "devDependencies": {
