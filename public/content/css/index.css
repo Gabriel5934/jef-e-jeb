@@ -201,6 +201,7 @@ header > input {
   font-family: 'Alfa Slab One', cursive;
   color: black;
   font-size: 35px;
+  margin: 15px 0 0 0;
 }
 
 .chapter-button {
