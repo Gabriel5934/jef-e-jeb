@@ -209,6 +209,13 @@ header > input {
   background-color: transparent;
 }
 
+.google-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
 /* media queries */
 @media (max-width: 768px) {
   #content-container {
