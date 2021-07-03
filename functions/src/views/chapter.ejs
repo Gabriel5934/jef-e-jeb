@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="/content/css/chapter.css" rel="stylesheet" type="text/css">
     <link href="/content/css/fonts.css" rel="stylesheet" type="text/css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <title>Jef e Jeb - Capítulo <%- chapter %></title>
   </head>
@@ -15,25 +17,31 @@
     <header>
       <a class="text-light text-decoration-none" href="../">Jef e Jeb</a>
     </header>
-    <div class="intro">
-      <h1>Capítulo <%- chapter %></h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim pulvinar ante. Maecenas ac vulputate nisl. Cras eu interdum dui. Fusce finibus fringilla pharetra. Phasellus condimentum diam at nulla viverra posuere. Praesent eu erat tellus. In convallis lectus lorem, ut egestas massa facilisis nec. Ut vitae mauris pharetra, tempus erat eget, laoreet elit. Phasellus feugiat mi ut magna viverra consectetur. Ut luctus ipsum ac turpis ultricies, ac ornare neque placerat. Mauris ac tincidunt tortor. Proin porta eu sem dapibus convallis. Proin ut massa volutpat, interdum mi ac, fermentum quam.</p>
+    <section class="intro">
+      <div>
+        <h1>Capítulo <%- chapter %></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim pulvinar ante. Maecenas ac vulputate nisl. Cras eu interdum dui. Fusce finibus fringilla pharetra. Phasellus condimentum diam at nulla viverra posuere. Praesent eu erat tellus. In convallis lectus lorem, ut egestas massa facilisis nec. Ut vitae mauris pharetra, tempus erat eget, laoreet elit. Phasellus feugiat mi ut magna viverra consectetur. Ut luctus ipsum ac turpis ultricies, ac ornare neque placerat. Mauris ac tincidunt tortor. Proin porta eu sem dapibus convallis. Proin ut massa volutpat, interdum mi ac, fermentum quam.</p>
+        
+        <% if (previous) { %> 
+          <button type="button" class="btn btn-info"><a class="text-dark text-decoration-none" href="<%- `./${previous}` %>">ANTERIOR</a></button>
+        <% } else { %>
+          <button type="button" class="btn btn-info disabled"><a class="text-dark text-decoration-none" href="<%- `./${previous}` %>">ANTERIOR</a></button>
+        <% } %>
       
-      <% if (previous) { %> 
-        <button type="button" class="btn btn-info"><a class="text-dark text-decoration-none" href="<%- `./${previous}` %>">ANTERIOR</a></button>
-      <% } else { %>
-        <button type="button" class="btn btn-info disabled"><a class="text-dark text-decoration-none" href="<%- `./${previous}` %>">ANTERIOR</a></button>
-      <% } %>
-     
-      <% if (next) { %> 
-        <button type="button" class="btn btn-info"><a class="text-dark text-decoration-none" href="<%- `./${next}` %>">PRÓXIMO</a></button>
-      <% } else { %>
-        <button type="button" class="btn btn-info disabled"><a class="text-dark text-decoration-none" href="<%- `./${next}` %>">PRÓXIMO</a></button>
-      <% } %>
-
-    </div>
+        <% if (next) { %> 
+          <button type="button" class="btn btn-info"><a class="text-dark text-decoration-none" href="<%- `./${next}` %>">PRÓXIMO</a></button>
+        <% } else { %>
+          <button type="button" class="btn btn-info disabled"><a class="text-dark text-decoration-none" href="<%- `./${next}` %>">PRÓXIMO</a></button>
+        <% } %>
+      </div>
+      <div>
+        <button type="button" class="btn btn-link text-secondary"><i id="likeButton" class="bi bi-heart"></i></button>
+        <button type="button" class="btn btn-link text-secondary"><i class="bi bi-eye"></i></button>
+      </div>
+      </section>
     <iframe style="width:100%;height:95vh" src="https://online.fliphtml5.com/nqsrx/<%- `./${chapterUrl}` %>/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="../content/js/chapter.js" defer></script>
   </body>
 </html>

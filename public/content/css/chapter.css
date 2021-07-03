@@ -19,11 +19,10 @@ header > a {
 }
 
 .intro { 
-  margin: 0 100px 0 100px
-}
-
-p {
-  width: 33%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 100px 0 100px;
+  gap: 1rem;
 }
 
 iframe {
@@ -31,7 +30,13 @@ iframe {
 }
 
 @media (max-width: 1300px) {
-  p {
-    width: 100%
+  .intro {
+    grid-template-columns: 1fr
+  }
+}
+
+@media (max-width: 600px) {
+  .intro { 
+    margin: 0 10px 0 10px
   }
 }

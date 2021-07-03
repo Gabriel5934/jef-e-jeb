@@ -1,18 +1,13 @@
 import { Router } from 'express'
 
-import * as fs from 'fs'
-import * as path from 'path'
-
 const routes = Router()
-const chaptersCount = fs.readdirSync(path.join(__dirname, '../../public/content/images/chapters-covers')).length
 
 // TEMPORARY
 const chapters = [1, 2, 3, 4, 5]
-
+const chaptersCount = chapters.length
 interface ChaptersUrls {
   [key: string]: any
 }
-
 const chaptersUrls : ChaptersUrls = {
   1: 'djqv',
   2: 'rrar',

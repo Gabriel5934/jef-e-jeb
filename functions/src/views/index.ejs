@@ -9,7 +9,9 @@
         <link href="content/css/fonts.css" rel="stylesheet" type="text/css">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="content/css/glide.core.min.css">
+        <link rel="stylesheet" href="content/css/glide.theme.min.css">
 
         <title>Jef e Jeb</title>
     </head>
@@ -38,15 +40,22 @@
                 </div>
             </section>
             <h1 class="topic-header">Capítulos</h1>
-            <div class="carousel-container js-flickity"  data-flickity-options='{ "cellAlign": "left", "contain": true, "wrapAround": false, "pageDots": false, "draggable": false }'>
-                <% for (let i =0; i < chaptersCount;  i++ ) { %>
-                    <button type="button" class="chapter-button">
-                        <a href=<%-`./capitulo/${i+1}`%>><img class="chapter-cover" src=<%-`content/images/chapters-covers/Jef&Jeb${i+1}.jpg`%>></a>
-                    </button>
-                <% } %>
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <% for (let i = 0; i < chaptersCount;  i++ ) { %>
+                            <a class="glide__slide" href=<%-`./capitulo/${i+1}`%>>
+                                <img class="rounded" src=<%-`content/images/chapters-covers/Jef&Jeb${i+1}.jpg`%>>
+                            </a>
+                        <% } %>
+                    </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="bi bi-caret-left-fill"></i></button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="bi bi-caret-right-fill"></i></button>
+                </div>
             </div>
         </div>
-        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
 
         <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -135,31 +144,29 @@
         
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
 
         <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyD4u8UUzeeJblrdtt1QxqmQeGDrJEf9d_k",
-            authDomain: "jefjeb-dev.firebaseapp.com",
-            projectId: "jefjeb-dev",
-            storageBucket: "jefjeb-dev.appspot.com",
-            messagingSenderId: "606291928201",
-            appId: "1:606291928201:web:49d34d56fe8708bcb61258",
-            measurementId: "G-LYJ9EP1ZZ6"
-        };
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
+            var firebaseConfig = {
+                apiKey: "AIzaSyD4u8UUzeeJblrdtt1QxqmQeGDrJEf9d_k",
+                authDomain: "jefjeb-dev.firebaseapp.com",
+                projectId: "jefjeb-dev",
+                storageBucket: "jefjeb-dev.appspot.com",
+                messagingSenderId: "606291928201",
+                appId: "1:606291928201:web:49d34d56fe8708bcb61258",
+                measurementId: "G-LYJ9EP1ZZ6"
+            };
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
 
-        const auth = firebase.auth()
-        const db = firebase.firestore()
+            const auth = firebase.auth()
+            const db = firebase.firestore()
 
-        db.settings({
-            timestampsInSnapshots: true
-        })
+            db.settings({ timestampsInSnapshots: true })
         </script>
 
-        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+        <script src="content/js/glide.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script src="content/js/index.js" defer></script>
     </body>
