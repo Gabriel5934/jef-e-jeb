@@ -2,31 +2,30 @@ body {
   margin: 0;
 }
 
-header { 
-  background-color: #E56363;
-  width: 100%;
-  text-align: left;
-  margin: 0 0 30px 0;
-  display: table;
-  height: 60px;
-}
-
-header > a {
-  cursor: pointer;
-  font-family: 'Alfa Slab One', cursive;
-  font-size: 38px;
-  margin: 0 0 0 10px;
-}
-
 .intro { 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin: 0 100px 0 100px;
+  margin: 50px 100px 50px 100px;
   gap: 1rem;
 }
 
-iframe {
-  margin: 50px 0 0 0;
+.feedback {
+  text-align: center;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+}
+
+.counter { 
+  display: inline-block;
+}
+
+#viewButton {
+  pointer-events: none;
+}
+
+i {
+  font-size: 32px;
 }
 
 @media (max-width: 1300px) {
@@ -37,6 +36,6 @@ iframe {
 
 @media (max-width: 600px) {
   .intro { 
-    margin: 0 10px 0 10px
+    margin: 10px;
   }
 }

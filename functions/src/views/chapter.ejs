@@ -14,9 +14,7 @@
     <title>Jef e Jeb - Capítulo <%- chapter %></title>
   </head>
   <body>
-    <header>
-      <a class="text-light text-decoration-none" href="../">Jef e Jeb</a>
-    </header>
+    <%- include('components/navbar') %>
     <section class="intro">
       <div>
         <h1>Capítulo <%- chapter %></h1>
@@ -34,9 +32,15 @@
           <button type="button" class="btn btn-info disabled"><a class="text-dark text-decoration-none" href="<%- `./${next}` %>">PRÓXIMO</a></button>
         <% } %>
       </div>
-      <div>
-        <button type="button" class="btn btn-link text-secondary"><i id="likeButton" class="bi bi-heart"></i></button>
-        <button type="button" class="btn btn-link text-secondary"><i class="bi bi-eye"></i></button>
+      <div class="feedback">
+        <div class="counter">
+          <h1 id="likeCount">0</h1>
+          <button id="likeButton" type="button" class="btn btn-link text-secondary"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="counter">
+          <h1>0</h1>
+          <button id="viewButton" type="button" class="btn btn-link text-secondary"><i class="bi bi-eye"></i></button>
+        </div>
       </div>
       </section>
     <iframe style="width:100%;height:95vh" src="https://online.fliphtml5.com/nqsrx/<%- `./${chapterUrl}` %>/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
