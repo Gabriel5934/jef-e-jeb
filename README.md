@@ -7,7 +7,7 @@
 
 #### Back-End
 * NodeJS
-* Typescript
+* TypeScript
 * EJS
 * Firebase
 
