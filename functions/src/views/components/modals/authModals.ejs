@@ -1,0 +1,131 @@
+<div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="signinModalLabel">Entrar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form class="modal-body" id="signinForm">
+          <div class="mb-3">
+              <label for="inputEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required>
+          </div>
+          <div class="mb-3">
+              <label for="inputPassword" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="inputPassword" required>
+              <div class="invalid-feedback">
+                  Email ou senha incorretos
+              </div>
+          </div>
+          <a class="link-primary" data-bs-target="#signupModal" data-bs-toggle="modal" data-bs-dismiss="modal">Não é cadastrado?</a>
+          <div class="google-btn">
+            <div class="google-icon-wrapper">
+              <img class="google-icon" src="/content/images/googleLogo.svg">
+            </div>
+            <span class="btn-text">Entrar com Google</span>
+          </div>
+      </form>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info text-dark" data-bs-dismiss="modal">CANCELAR</button>
+          <button type="button" class="btn btn-info text-dark" id="signinButton">ENTRAR</button>
+      </div>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="signupModalLabel">Cadastrar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form class="modal-body" id="signupForm">
+          <div class="mb-3">
+              <label for="inputEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required>
+              <div class="invalid-feedback">
+                  Insira um email válido
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="inputPassword" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="inputPassword" required>
+              <div class="invalid-feedback">
+                  A senha deve conter pelo menos 8 caracteres
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirmar senha</label>
+              <input type="password" class="form-control" id="confirmPassword" required>
+              <div class="invalid-feedback">
+                  As senhas não coincidem
+              </div>
+          </div>
+          <a class="link-primary" data-bs-target="#signinModal" data-bs-toggle="modal" data-bs-dismiss="modal">Já é cadastrado?</a>
+      </form>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info text-dark" data-bs-dismiss="modal">CANCELAR</button>
+          <button type="button" class="btn btn-info text-dark" id="signupButton">CADASTRAR</button>
+      </div>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="accountModallLabel">Sua conta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <h1 id="userEmail"></h1>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-info text-dark" id="signoutButton">SAIR</button>
+      </div>
+      </div>
+  </div>
+</div>
+
+<script src="../content/js/components/authModals.js" defer></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+  .google-btn {
+    margin-top: 1rem;
+    width: 184px;
+    height: 42px;
+    background-color: #4285f4;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: #fff;
+  }
+  .google-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-text {
+    float: right;
+    margin: 11px 11px 0 0;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  a {
+    cursor: pointer;
+  }
+</style>

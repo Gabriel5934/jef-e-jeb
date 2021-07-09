@@ -33,18 +33,42 @@
         <% } %>
       </div>
       <div class="feedback">
-        <div class="counter">
+        <div class="spinner-border counter" role="status">
+          <span class="sr-only"></span>
+        </div>
+        <div class="counter hidden">
           <h1 id="likeCount">0</h1>
           <button id="likeButton" type="button" class="btn btn-link text-secondary"><i class="bi bi-heart"></i></button>
         </div>
-        <div class="counter">
+        <div class="counter hidden">
           <h1>0</h1>
           <button id="viewButton" type="button" class="btn btn-link text-secondary"><i class="bi bi-eye"></i></button>
         </div>
       </div>
-      </section>
-    <iframe style="width:100%;height:95vh" src="https://online.fliphtml5.com/nqsrx/<%- `./${chapterUrl}` %>/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+    </section>
   
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyD4u8UUzeeJblrdtt1QxqmQeGDrJEf9d_k",
+            authDomain: "jefjeb-dev.firebaseapp.com",
+            projectId: "jefjeb-dev",
+            storageBucket: "jefjeb-dev.appspot.com",
+            messagingSenderId: "606291928201",
+            appId: "1:606291928201:web:49d34d56fe8708bcb61258",
+            measurementId: "G-LYJ9EP1ZZ6"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        const auth = firebase.auth()
+        const db = firebase.firestore()
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="../content/js/chapter.js" defer></script>
   </body>

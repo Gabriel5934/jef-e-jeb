@@ -1,10 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">Jef e Jeb</span>
+    <a class="navbar-brand h1" href="../">Jef e Jeb</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../">Home</a>
+          <a class="nav-link" href="../">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Autor</a>
@@ -16,9 +19,12 @@
           <a class="nav-link" href="#">Galeria</a>
         </li>
       </ul>
+      <input class="d-flex" id="profilePicture" data-bs-toggle="modal" data-bs-target="#signinModal" type="image" src="/content/images/user.png"></input>
     </div>
   </div>
 </nav>
+
+<%- include('modals/authModals') %>
 
 <style>
   nav {
@@ -27,5 +33,9 @@
 
   .h1 {
     font-family: 'Alfa Slab One', cursive;
+  }
+
+  input {
+    width: 64px; height: 64px;
   }
 </style>

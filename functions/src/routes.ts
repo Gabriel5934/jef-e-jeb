@@ -39,13 +39,17 @@ routes.get('/capitulo/*', (req, res) => {
       chapterUrl: chaptersUrls[requestedChapter]
     })
   } else {
-    res.render('notFound')
+    res.status(404).render('404', {
+      message: 'Não encontramos esse capítulo'
+    })
   }
 })
 
 // 404 
 routes.get('*', (req, res) => {
-  res.status(404).render('404')
+  res.status(404).render('404', {
+    message: 'Não encontramos o que você procura'
+  })
 })
 
 export default routes

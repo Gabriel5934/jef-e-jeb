@@ -28,6 +28,10 @@ i {
   font-size: 32px;
 }
 
+.hidden {
+  display: none !important;
+}
+
 @media (max-width: 1300px) {
   .intro {
     grid-template-columns: 1fr
