@@ -1,14 +1,15 @@
-<div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
+<div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-      <div class="modal-content">
+    <div class="modal-content">
       <div class="modal-header">
-          <h5 class="modal-title" id="signinModalLabel">Entrar</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="signinModalLabel">Entrar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form class="modal-body" id="signinForm">
+      <div class="modal-body">
+        <form id="signinForm">
           <div class="mb-3">
-              <label for="inputEmail" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required>
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required>
           </div>
           <div class="mb-3">
               <label for="inputPassword" class="form-label">Senha</label>
@@ -17,19 +18,20 @@
                   Email ou senha incorretos
               </div>
           </div>
-          <a class="link-primary" data-bs-target="#signupModal" data-bs-toggle="modal" data-bs-dismiss="modal">Não é cadastrado?</a>
-          <div class="google-btn">
-            <div class="google-icon-wrapper">
-              <img class="google-icon" src="/content/images/googleLogo.svg">
-            </div>
-            <span class="btn-text">Entrar com Google</span>
+        </form>
+        <a class="link-primary" data-bs-target="#signupModal" data-bs-toggle="modal" data-bs-dismiss="modal">Não é cadastrado?</a>
+        <div class="google-btn">
+          <div class="google-icon-wrapper">
+            <img class="google-icon" src="/content/images/googleLogo.svg">
           </div>
-      </form>
+          <span class="btn-text">Entrar com Google</span>
+        </div>
+      </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-outline-info text-dark" data-bs-dismiss="modal">CANCELAR</button>
-          <button type="button" class="btn btn-info text-dark" id="signinButton">ENTRAR</button>
+        <button type="button" class="btn btn-outline-info text-dark" data-bs-dismiss="modal">CANCELAR</button>
+        <button type="button" class="btn btn-info text-dark" id="signinButton">ENTRAR</button>
       </div>
-      </div>
+    </div>
   </div>
 </div>
 
@@ -41,28 +43,32 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form class="modal-body" id="signupForm">
-          <div class="mb-3">
-              <label for="inputEmail" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required>
-              <div class="invalid-feedback">
-                  Insira um email válido
-              </div>
-          </div>
-          <div class="mb-3">
-              <label for="inputPassword" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="inputPassword" required>
-              <div class="invalid-feedback">
-                  A senha deve conter pelo menos 8 caracteres
-              </div>
-          </div>
-          <div class="mb-3">
-              <label for="confirmPassword" class="form-label">Confirmar senha</label>
-              <input type="password" class="form-control" id="confirmPassword" required>
-              <div class="invalid-feedback">
-                  As senhas não coincidem
-              </div>
-          </div>
-          <a class="link-primary" data-bs-target="#signinModal" data-bs-toggle="modal" data-bs-dismiss="modal">Já é cadastrado?</a>
+        <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required>
+            <div class="invalid-feedback">
+                Insira um email válido
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="inputPassword" required>
+            <div class="invalid-feedback">
+                A senha deve conter pelo menos 8 caracteres
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirmar senha</label>
+            <input type="password" class="form-control" id="confirmPassword" required>
+            <div class="invalid-feedback">
+                As senhas não coincidem
+            </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlFile1">Foto de Perfil</label><br>
+          <input type="file" class="form-control-file" id="profilePictureInput">
+        </div>
+        <a class="link-primary" data-bs-target="#signinModal" data-bs-toggle="modal" data-bs-dismiss="modal">Já é cadastrado?</a>
       </form>
       <div class="modal-footer">
           <button type="button" class="btn btn-outline-info text-dark" data-bs-dismiss="modal">CANCELAR</button>

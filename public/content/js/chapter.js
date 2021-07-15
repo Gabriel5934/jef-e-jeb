@@ -2,6 +2,7 @@
 const LIKE_BUTTON = document.querySelector('#likeButton')
 const LIKE_COUNT = document.querySelector('#likeCount')
 const COUNTER_CLASS = document.querySelectorAll('.counter')
+const LIKE_COUNTER_DIV = document.querySelector('#likeCounterDiv')
 
 // Window objects
 URL = window.location.href.split('/')
@@ -19,25 +20,35 @@ db.collection('chapters').where('number', '==', CHAPTER_NUMBER).get().then((snap
   snapshot.docs.forEach((doc) => {
     LIKE_COUNT.textContent = doc.data().likes
   })
+  if (LIKE_COUNTER_DIV.classList.contains('hidden')) { // If the like button isn't already visible
+    COUNTER_CLASS.forEach((node) => {  
+      node.classList.toggle('hidden') 
+    })
+  }
 })
 
 let likedChapters = []
 
 firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
+  if (user) { // Logged in
+    likedChapters = []
     db.collection('chapters').where('who_liked', 'array-contains', user.uid).get().then((snapshot) => {
       snapshot.docs.forEach((doc) => {
         likedChapters.push(doc.data().number)
       })
+      console.log(likedChapters)
       if (likedChapters.includes(CHAPTER_NUMBER)) {
         LIKE_BUTTON.childNodes[0].classList.toggle('bi-heart')
         LIKE_BUTTON.childNodes[0].classList.toggle('text-danger')
         LIKE_BUTTON.childNodes[0].classList.toggle('bi-heart-fill')
       }
-      COUNTER_CLASS.forEach((node) => { 
-        node.classList.toggle('hidden') 
-      })
     })
+  } else { // Logged out
+    if (document.querySelector('#likeButton').childNodes[0].classList.contains('bi-heart-fill')) {
+      LIKE_BUTTON.childNodes[0].classList.toggle('bi-heart')
+      LIKE_BUTTON.childNodes[0].classList.toggle('text-danger')
+      LIKE_BUTTON.childNodes[0].classList.toggle('bi-heart-fill')
+    }
   }
 });
 
