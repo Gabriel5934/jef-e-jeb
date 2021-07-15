@@ -20,6 +20,7 @@ const USERNAME = document.querySelector('#inputUsername')
 const CHANGE_PICTURE_INPUT = document.querySelector('#changePictureInput')
 const CHANGE_PICTURE = document.querySelector('#changePicture')
 const PROFILE_PICTURE_FORM = document.querySelector('#profilePictureForm')
+
 // Regular expressions
 const EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -39,12 +40,12 @@ firebase.auth().useDeviceLanguage();
 // Hide or display user data
 const toggleUserData = async (user) => {
   if (user) {
+    PROFILE_PICTURE.setAttribute('data-bs-target', '#accountModal')
     if (user.photoURL && sessionStorage.getItem('photoURL')) {
       PROFILE_PICTURE.src = sessionStorage.getItem('photoURL')
     } else if (user.photoURL) {
       PROFILE_PICTURE.src = user.photoURL
     }
-    PROFILE_PICTURE.setAttribute('data-bs-target', '#accountModal')
     USER_PICTURE.src = user.photoURL ? user.photoURL : '/content/images/user.png'
     USER_EMAIL.value = user.email
     USERNAME.value = user.displayName
@@ -76,6 +77,10 @@ firebase.auth().onAuthStateChanged((user) => {
     toggleUserData(user)
     SIGNIN_MODAL.hide()
     SIGNIN_FORM.reset()
+
+    if (user.providerData[0].providerId == 'google.com') {
+      PROFILE_PICTURE_FORM.classList.add('hidden')
+    }
   }
 });
 

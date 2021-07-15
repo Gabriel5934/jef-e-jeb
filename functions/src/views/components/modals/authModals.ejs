@@ -85,11 +85,13 @@
           <div class="mb-3">
             <img class="profilePicture img-responsive">
           </div>
-          <div class="mb-3">
-            <label for="formFile" class="form-label">Alterar foto de perfil</label>
-            <form id="profilePictureForm"><input class="form-control" type="file" id="changePictureInput" accept=".png, .jpg, .jpeg, .gif"></form>
-            <button type="button" class="btn btn-info text-dark" id="changePicture">ALTERAR</button>
-          </div>
+          <form id="profilePictureForm">
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Alterar foto de perfil</label>
+              <input class="form-control" type="file" id="changePictureInput" accept=".png, .jpg, .jpeg, .gif">
+              <button type="button" class="btn btn-info text-dark" id="changePicture">ALTERAR</button>
+            </div>
+          </form>
           <div class="mb-3 row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
@@ -157,5 +159,9 @@
 
   #changePicture {
     margin-top: 1rem;
+  }
+
+  .hidden {
+    display: none !important;
   }
 </style>
