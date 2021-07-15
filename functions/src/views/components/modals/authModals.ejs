@@ -64,10 +64,6 @@
                 As senhas não coincidem
             </div>
         </div>
-        <div class="mb-3">
-          <label for="exampleFormControlFile1">Foto de Perfil</label><br>
-          <input type="file" class="form-control-file" id="profilePictureInput">
-        </div>
         <a class="link-primary" data-bs-target="#signinModal" data-bs-toggle="modal" data-bs-dismiss="modal">Já é cadastrado?</a>
       </form>
       <div class="modal-footer">
@@ -81,16 +77,35 @@
 <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
-      <div class="modal-header">
-          <h5 class="modal-title" id="accountModallLabel">Sua conta</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          <h1 id="userEmail"></h1>
-      </div>
-      <div class="modal-footer">
-          <button type="button" class="btn btn-info text-dark" id="signoutButton">SAIR</button>
-      </div>
+        <div class="modal-header">
+            <h5 class="modal-title" id="accountModallLabel">Sua conta</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <img class="profilePicture img-responsive">
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Alterar foto de perfil</label>
+            <form id="profilePictureForm"><input class="form-control" type="file" id="changePictureInput" accept=".png, .jpg, .jpeg, .gif"></form>
+            <button type="button" class="btn btn-info text-dark" id="changePicture">ALTERAR</button>
+          </div>
+          <div class="mb-3 row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input id="userEmail" type="text" readonly class="form-control-plaintext" id="staticEmail">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputName" class="col-sm-2 col-form-label">Usuário</label>
+            <div class="col-sm-10">
+              <input type="text" readonly class="form-control-plaintext" id="inputUsername">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-info text-dark" id="signoutButton">SAIR</button>
+        </div>
       </div>
   </div>
 </div>
@@ -133,5 +148,14 @@
 
   a {
     cursor: pointer;
+  }
+
+  .profilePicture {
+    width: 64px; height: 64px;
+    border-radius: 64px;
+  }
+
+  #changePicture {
+    margin-top: 1rem;
   }
 </style>

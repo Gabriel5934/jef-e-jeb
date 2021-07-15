@@ -36,7 +36,6 @@ firebase.auth().onAuthStateChanged((user) => {
       snapshot.docs.forEach((doc) => {
         likedChapters.push(doc.data().number)
       })
-      console.log(likedChapters)
       if (likedChapters.includes(CHAPTER_NUMBER)) {
         LIKE_BUTTON.childNodes[0].classList.toggle('bi-heart')
         LIKE_BUTTON.childNodes[0].classList.toggle('text-danger')

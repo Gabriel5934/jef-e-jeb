@@ -19,18 +19,8 @@
       <div>
         <h1>Capítulo <%- chapter %></h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim pulvinar ante. Maecenas ac vulputate nisl. Cras eu interdum dui. Fusce finibus fringilla pharetra. Phasellus condimentum diam at nulla viverra posuere. Praesent eu erat tellus. In convallis lectus lorem, ut egestas massa facilisis nec. Ut vitae mauris pharetra, tempus erat eget, laoreet elit. Phasellus feugiat mi ut magna viverra consectetur. Ut luctus ipsum ac turpis ultricies, ac ornare neque placerat. Mauris ac tincidunt tortor. Proin porta eu sem dapibus convallis. Proin ut massa volutpat, interdum mi ac, fermentum quam.</p>
-        
-        <% if (previous) { %> 
-          <button type="button" class="btn btn-info"><a class="text-dark text-decoration-none" href="<%- `./${previous}` %>">ANTERIOR</a></button>
-        <% } else { %>
-          <button type="button" class="btn btn-info disabled"><a class="text-dark text-decoration-none" href="<%- `./${previous}` %>">ANTERIOR</a></button>
-        <% } %>
-      
-        <% if (next) { %> 
-          <button type="button" class="btn btn-info"><a class="text-dark text-decoration-none" href="<%- `./${next}` %>">PRÓXIMO</a></button>
-        <% } else { %>
-          <button type="button" class="btn btn-info disabled"><a class="text-dark text-decoration-none" href="<%- `./${next}` %>">PRÓXIMO</a></button>
-        <% } %>
+        <button type="button" class="btn btn-info <% if (!previous) { %> disabled <% } %>"><a class="text-dark text-decoration-none" href="<%- `./${previous}` %>">ANTERIOR</a></button>
+        <button type="button" class="btn btn-info <% if (!next) { %> disabled <% } %>"><a class="text-dark text-decoration-none" href="<%- `./${next}` %>">PRÓXIMO</a></button>
       </div>
       <div class="feedback">
         <div class="spinner-border counter" role="status">
