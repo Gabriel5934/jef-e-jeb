@@ -4,6 +4,9 @@ const LIKE_COUNT = document.querySelector('#likeCount')
 const COUNTER_CLASS = document.querySelectorAll('.counter')
 const LIKE_COUNTER_DIV = document.querySelector('#likeCounterDiv')
 
+const COMMENT_TEXTAREA = document.querySelector('#commentTextarea')
+const CHARACTER_COUNT = document.querySelector('#characterCount')
+
 // Window objects
 URL = window.location.href.split('/')
 CHAPTER_NUMBER = parseInt(URL[URL.length - 1])
@@ -70,4 +73,10 @@ LIKE_BUTTON.addEventListener('click', () => {
   } else {
     SIGNIN_MODAL.show()
   }
+})
+
+
+COMMENT_TEXTAREA.addEventListener('keyup', (event) => {
+  console.log(COMMENT_TEXTAREA.value.length)
+  CHARACTER_COUNT.textContent = COMMENT_TEXTAREA.value.length + '/280'
 })

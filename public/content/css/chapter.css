@@ -9,11 +9,12 @@ body {
   gap: 1rem;
 }
 
-.feedback {
+.counters {
   text-align: center;
   margin: 0px auto;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .counter { 
@@ -32,6 +33,26 @@ i {
   display: none !important;
 }
 
+.profile-picture {
+  width: 64px; height: 64px;
+  border-radius: 100%;
+}
+
+.feedback {
+  margin-top: 16px;
+  margin: 50px 100px 50px 100px;
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.comment-text {
+  margin-left: 16px;
+}
+
 @media (max-width: 1300px) {
   .intro {
     grid-template-columns: 1fr
@@ -40,6 +61,11 @@ i {
 
 @media (max-width: 600px) {
   .intro { 
+    margin: 10px;
+  }
+
+  .feedback {
+    margin-top: 16px;
     margin: 10px;
   }
 }

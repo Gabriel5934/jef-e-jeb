@@ -19,6 +19,10 @@
           <a class="nav-link" href="#">Galeria</a>
         </li>
       </ul>
+      <div class="form-check form-switch dark-mode-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Modo escuro</label>
+      </div>
       <input class="d-flex" id="profilePicture" data-bs-toggle="modal" data-bs-target="#signinModal" type="image" src="/content/images/user.png"></input>
     </div>
   </div>
@@ -43,4 +47,43 @@
   .hidden {
     display: none !important;
   }
+
+  .dark-mode-switch {
+    margin-right: 1rem;
+  }
+
+  .dark-mode {
+    background-color: #1D1D1D;
+    color: #FFFFFF;
+  }
+
+  .form-check-label {
+    color: #000000
+  }
 </style>
+
+<script>
+  const DARKMODE_CHECK = document.querySelector('.form-check-input')
+  const TEXT_ELEMENTS = document.querySelectorAll('h1, h2, h3, p')
+
+  const PEFFERED_THEME = localStorage.getItem("theme");
+
+  if (PEFFERED_THEME === "dark") {
+    document.body.classList.add('dark-mode')
+    TEXT_ELEMENTS.forEach(el => el.classList.add('dark-mode'))
+    document.querySelector('.form-check-input').checked = true
+  }
+
+  DARKMODE_CHECK.addEventListener('change', function (e) {
+    if (DARKMODE_CHECK.checked) { 
+      document.body.classList.add('dark-mode')
+      TEXT_ELEMENTS.forEach(el => el.classList.add('dark-mode'))
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove('dark-mode')
+      TEXT_ELEMENTS.forEach(el => el.classList.remove('dark-mode'))
+      localStorage.setItem("theme", "light");
+    }
+  })
+
+</script>

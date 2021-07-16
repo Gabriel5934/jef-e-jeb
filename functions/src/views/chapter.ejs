@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
 
     <link href="/content/css/chapter.css" rel="stylesheet" type="text/css">
     <link href="/content/css/fonts.css" rel="stylesheet" type="text/css">
@@ -22,7 +23,9 @@
         <button type="button" class="btn btn-info <% if (!previous) { %> disabled <% } %>"><a class="text-dark text-decoration-none" href="<%- `./${previous}` %>">ANTERIOR</a></button>
         <button type="button" class="btn btn-info <% if (!next) { %> disabled <% } %>"><a class="text-dark text-decoration-none" href="<%- `./${next}` %>">PRÓXIMO</a></button>
       </div>
-      <div class="feedback">
+    </section>
+    <section class="feedback">
+      <div class="counters">
         <div class="spinner-border counter" role="status">
           <span class="sr-only"></span>
         </div>
@@ -33,6 +36,21 @@
         <div class="counter hidden">
           <h1>0</h1>
           <button id="viewButton" type="button" class="btn btn-link text-secondary"><i class="bi bi-eye"></i></button>
+        </div>
+      </div>
+      <h3>Comentários</h3>
+      <div class="comment-list">
+        <form>
+          <div class="form-group">
+            <label for="commentTextarea">Novo comentário</label>
+            <textarea class="form-control" id="commentTextarea" rows="3" maxlength="280"></textarea>
+            <label for="commentTextarea" id="characterCount">0/280</label><br>
+            <button type="button" class="btn btn-info">ENVIAR</button>
+          </div>
+        </form>
+        <div class="comment">
+          <img class="profile-picture" src="/content/images/user.png">
+          <p class="comment-text">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
         </div>
       </div>
     </section>

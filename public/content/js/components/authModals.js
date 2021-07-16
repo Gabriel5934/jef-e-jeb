@@ -41,9 +41,7 @@ firebase.auth().useDeviceLanguage();
 const toggleUserData = async (user) => {
   if (user) {
     PROFILE_PICTURE.setAttribute('data-bs-target', '#accountModal')
-    if (user.photoURL && sessionStorage.getItem('photoURL')) {
-      PROFILE_PICTURE.src = sessionStorage.getItem('photoURL')
-    } else if (user.photoURL) {
+    if (user.photoURL) {
       PROFILE_PICTURE.src = user.photoURL
     }
     USER_PICTURE.src = user.photoURL ? user.photoURL : '/content/images/user.png'
@@ -62,8 +60,7 @@ const toggleUserData = async (user) => {
 const getDownloadableURL = (user) => {
   return new Promise((resolve, reject) => {
     STORAGE_REF.child(`profile_pictures/${user.uid}`).getDownloadURL().then(function(url) {
-      sessionStorage.setItem('photoURL', url)
-      resolve(sessionStorage.getItem('photoURL'))
+      resolve(url)
     }) 
   })
 }
@@ -72,7 +69,6 @@ const getDownloadableURL = (user) => {
 firebase.auth().onAuthStateChanged((user) => {
   if (!user) { // Not logged in
     toggleUserData(user)
-    sessionStorage.clear();
   } else if (user){ // Just logged in
     toggleUserData(user)
     SIGNIN_MODAL.hide()
