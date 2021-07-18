@@ -1,3 +1,5 @@
+![Jef and Jeb](https://i.imgur.com/XDy0HLD.png)
+
 ### A website for a Brazilian comic artist to post his comics from the series "Jef and Jeb"
 
 #### Front-End
